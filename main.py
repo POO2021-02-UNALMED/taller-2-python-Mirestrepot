@@ -12,6 +12,8 @@ class Asiento:
         if color in colores:
             self.color = color
         else:
+
+            
             pass
 
 
@@ -28,7 +30,7 @@ class Motor:
         if tipo=="electrico" or tipo=="normal":
             self.tipo=tipo
 
-            
+
 class Auto:
 
     cantidadCreados = 0
@@ -50,6 +52,8 @@ class Auto:
             if i!= None:
                 contador+=1
         return contador
+
+
 
     def verificarIntegridad(self):
         for i in self.asientos:
