@@ -25,7 +25,7 @@ class Auto:
         contador=0
         for i in self.asientos:
             if (i!=None):
-                
+
                 contador+=1
 
         return contador
@@ -51,6 +51,8 @@ class Motor:
         self.registro=registro
     
     def asignarTipo(self,tipo):
+
+        
 
         if (tipo=="electrico" or tipo=="gasolina"):
             self.tipo=tipo
