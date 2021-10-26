@@ -2,12 +2,12 @@ from typing import List
 
 
 class Asiento:
-    def __init__(self, color:str, precio:int, registro:int) -> None:
+    def __init__(self, color, precio, registro):
         self.color = color
         self.precio = precio
         self.registro = registro
 
-    def cambiarColor(self, color:str):
+    def cambiarColor(self, color):
         colores = ["rojo", "verde", "amarillo", "negro", "blanco"]
         if color in colores:
             self.color = color
@@ -30,23 +30,24 @@ class Auto:
 
     def cantidadAsientos(self):
 
-        contador=0
+        cont=0
 
         for i in self.asientos:
             if i!= None:
-                contador +=1
-        return contador
-
+                cont +=1
+        return cont
 
 
     def verificarIntegridad(self):
-        for i in self.asientos:
-            if i!= None:
-                if i.registro != self.registro or i.registro != self.motor.registro:
+            if self.asientos[0].registro == self.registro:
+                if self.registro == self.motor.registro:
+                    return print("Auto original")
+                else:
                     return print("Las piezas no son originales")
-            
-        return print  ("Auto original")
+            else:
+                return print("Las piezas no son originales")
 
+                
 class Motor:
     def __init__(self, numeroCilindros, tipo, registro):
         self.numeroCilindros = numeroCilindros
